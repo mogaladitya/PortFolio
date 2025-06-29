@@ -4,13 +4,9 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
   overflow: hidden;
-  /* Responsive width */
-  width: 100%;
-  min-width: 320px;
-  max-width: 420px;
-  min-height: 30px;
-  height: 100px;
-  margin-bottom: 10px; /* Add gap between cards */
+  /* Responsive width handled by Tailwind */
+  margin-bottom: 10px;
+  /* Remove min-width, max-width, min-height, height */
 }
 .tech-card:hover {
   transform: translateY(-5px) scale(1.02);
@@ -44,4 +40,11 @@
 .tech-card:hover .tooltip {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Optional: Add padding for mobile */
+@media (max-width: 640px) {
+  .tech-card {
+    padding: 1rem !important;
+  }
 }
