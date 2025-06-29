@@ -1,0 +1,47 @@
+.tech-card {
+  transition: all 0.3s ease;
+  background-color: #112240;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  /* Responsive width */
+  width: 100%;
+  min-width: 320px;
+  max-width: 420px;
+  min-height: 30px;
+  height: 100px;
+  margin-bottom: 10px; /* Add gap between cards */
+}
+.tech-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.tech-card::before {
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  left: var(--mouse-x, 50%);
+  top: var(--mouse-y, 50%);
+  transform: translate(-50%, -50%);
+}
+.tech-card:hover::before {
+  opacity: 1;
+}
+.tech-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+}
+
+.tech-card:hover .tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
